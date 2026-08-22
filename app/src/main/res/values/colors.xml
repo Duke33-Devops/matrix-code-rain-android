@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="cyber_dark_bg">#FF080B10</color>
+    <color name="matrix_green">#FF00FF66</color>
+    <color name="matrix_green_dim">#FF005522</color>
+    <color name="cyber_cyan">#FF00F0FF</color>
+    <color name="crt_amber">#FFFFB000</color>
+    <color name="synthwave_magenta">#FFFF007F</color>
+    <color name="breach_red">#FFFF2A2A</color>
+    <color name="pure_white">#FFE6F1FF</color>
+    <color name="glass_bg">#D00A0E14</color>
+    <color name="glass_border">#3300FF66</color>
+</resources>

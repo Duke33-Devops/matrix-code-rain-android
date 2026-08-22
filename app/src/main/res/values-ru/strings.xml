@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">Matrix Code Rain</string>
+    <string name="wallpaper_name">Живые обои Матрица</string>
+    <string name="wallpaper_description">Аутентичный цифровой дождь в стиле Киберпанк и Матрица с полной настройкой физики и цветов.</string>
+    <string name="dream_name">Заставка Матрица</string>
+    
+    <!-- HUD & Actions -->
+    <string name="hud_title">Matrix CODE RAIN</string>
+    <string name="version_tag">v1.0.0</string>
+    <string name="btn_set_wallpaper">Установить как обои</string>
+    <string name="btn_pause">Пауза</string>
+    <string name="btn_resume">Продолжить</string>
+    <string name="btn_reset">Сброс</string>
+    <string name="btn_send">Отправить</string>
+    <string name="btn_close">Закрыть</string>
+
+    <!-- Sections -->
+    <string name="sec_columns_title">Колонки, капли и плотность</string>
+    <string name="label_columns">Количество колонок</string>
+    <string name="label_max_drops">Макс. капель на колонку</string>
+    <string name="label_rain_density">Интенсивность дождя</string>
+    <string name="hint_rain_density">Случайные капли на колонку (до 75%%)</string>
+    <string name="label_static_grid">Статическая сетка (Подсветка)</string>
+    <string name="hint_static_grid">Символы зафиксированы в сетке, а капля подсвечивает каждую ячейку.</string>
+
+    <!-- Palettes -->
+    <string name="sec_palette_title">Цветовая палитра</string>
+    <string name="palette_matrix">Матричный зеленый</string>
+    <string name="palette_cyan">Кибер циан</string>
+    <string name="palette_amber">ЭЛТ Янтарь</string>
+    <string name="palette_magenta">Синтвейв</string>
+    <string name="palette_red">Красная тревога</string>
+    <string name="palette_white">Чистый белый</string>
+
+    <!-- Trail & Motion -->
+    <string name="sec_motion_title">Скорость и шлейф</string>
+    <string name="label_speed">Скорость падения</string>
+    <string name="label_fade">Длина шлейфа</string>
+    <string name="label_trail_neon">Охват неона в шлейфе</string>
+    <string name="hint_trail_neon">0%% = 1 символ. Каждые +10%% добавляют 1 символ (100%% = 11 символов).</string>
+
+    <!-- Toggles -->
+    <string name="label_glow">Неоновое свечение (Bloom)</string>
+    <string name="label_crt">ЭЛТ строки сканирования</string>
+    <string name="label_touch">Сенсорное взаимодействие</string>
+    <string name="label_audio">Звук дождя</string>
+    <string name="hint_audio">Воспроизводит атмосферный звук дождя с плавным затуханием.</string>
+
+    <!-- Messages -->
+    <string name="sec_message_title">Внедрить сообщение</string>
+    <string name="msg_placeholder">Введите текст...</string>
+    <string name="chip_wake">"Wake up, Neo..."</string>
+    <string name="chip_rabbit">"Follow the white rabbit."</string>
+    <string name="chip_spoon">"There is no spoon."</string>
+    <string name="chip_alert">"SYSTEM BREACH DETECTED"</string>
+</resources>

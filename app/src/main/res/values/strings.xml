@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">Matrix Code Rain</string>
+    <string name="wallpaper_name">Matrix Code Rain Live</string>
+    <string name="wallpaper_description">Authentic Cyberpunk digital code rain live wallpaper with customizable colors and physics.</string>
+    <string name="dream_name">Matrix Code Rain Screensaver</string>
+    
+    <!-- HUD & Actions -->
+    <string name="hud_title">Matrix CODE RAIN</string>
+    <string name="version_tag">v1.0.0</string>
+    <string name="btn_set_wallpaper">Set as Wallpaper</string>
+    <string name="btn_pause">Pause</string>
+    <string name="btn_resume">Resume</string>
+    <string name="btn_reset">Reset</string>
+    <string name="btn_send">Send</string>
+    <string name="btn_close">Close</string>
+
+    <!-- Sections -->
+    <string name="sec_columns_title">Columns, Drops &amp; Rain Flow</string>
+    <string name="label_columns">Number of Columns</string>
+    <string name="label_max_drops">Max Drops per Column</string>
+    <string name="label_rain_density">Rain Flow / Intensity</string>
+    <string name="hint_rain_density">Random drops per column (Capped at 75%%)</string>
+    <string name="label_static_grid">Static Grid Mode (Illumination)</string>
+    <string name="hint_static_grid">Characters stay fixed in place while glowing drops travel through.</string>
+
+    <!-- Palettes -->
+    <string name="sec_palette_title">Color Palette</string>
+    <string name="palette_matrix">Matrix Green</string>
+    <string name="palette_cyan">Cyber Cyan</string>
+    <string name="palette_amber">CRT Amber</string>
+    <string name="palette_magenta">Synthwave</string>
+    <string name="palette_red">Breach Red</string>
+    <string name="palette_white">Pure White</string>
+
+    <!-- Trail & Motion -->
+    <string name="sec_motion_title">Speed &amp; Trail</string>
+    <string name="label_speed">Drop Speed</string>
+    <string name="label_fade">Trail Length</string>
+    <string name="label_trail_neon">Trail Neon Reach</string>
+    <string name="hint_trail_neon">0%% = 1 char glow. Each +10%% adds 1 char glow (100%% = 11 chars).</string>
+
+    <!-- Toggles -->
+    <string name="label_glow">Neon Glow (Bloom)</string>
+    <string name="label_crt">CRT Scanlines</string>
+    <string name="label_touch">Touch Interaction</string>
+    <string name="label_audio">Rain Sound Loop</string>
+    <string name="hint_audio">Plays ambient rain audio with smooth fade.</string>
+
+    <!-- Messages -->
+    <string name="sec_message_title">Inject Terminal Message</string>
+    <string name="msg_placeholder">Type a message...</string>
+    <string name="chip_wake">"Wake up, Neo..."</string>
+    <string name="chip_rabbit">"Follow the white rabbit."</string>
+    <string name="chip_spoon">"There is no spoon."</string>
+    <string name="chip_alert">"SYSTEM BREACH DETECTED"</string>
+</resources>

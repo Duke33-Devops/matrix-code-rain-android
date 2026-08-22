@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">黑客帝国代码雨</string>
+    <string name="wallpaper_name">黑客帝国代码雨 动态壁纸</string>
+    <string name="wallpaper_description">正宗赛博朋克黑客帝国数字代码雨动态壁纸，支持全参数物理与色彩自定义。</string>
+    <string name="dream_name">代码雨 屏保</string>
+    
+    <!-- HUD & Actions -->
+    <string name="hud_title">Matrix CODE RAIN</string>
+    <string name="version_tag">v1.0.0</string>
+    <string name="btn_set_wallpaper">设为动态壁纸</string>
+    <string name="btn_pause">暂停</string>
+    <string name="btn_resume">继续</string>
+    <string name="btn_reset">重置</string>
+    <string name="btn_send">发送</string>
+    <string name="btn_close">关闭</string>
+
+    <!-- Sections -->
+    <string name="sec_columns_title">列数、雨滴与降雨密度</string>
+    <string name="label_columns">列数</string>
+    <string name="label_max_drops">单列最大雨滴数</string>
+    <string name="label_rain_density">降雨量 / 强度</string>
+    <string name="hint_rain_density">随机列雨滴（最高75%%）</string>
+    <string name="label_static_grid">静态网格模式（点亮推进）</string>
+    <string name="hint_static_grid">字符固定在网格中，雨滴头部依次点亮每个单元格。</string>
+
+    <!-- Palettes -->
+    <string name="sec_palette_title">色彩主题</string>
+    <string name="palette_matrix">经典矩阵绿</string>
+    <string name="palette_cyan">赛博青</string>
+    <string name="palette_amber">CRT 琥珀色</string>
+    <string name="palette_magenta">合成波粉</string>
+    <string name="palette_red">入侵红</string>
+    <string name="palette_white">纯白幽灵</string>
+
+    <!-- Trail & Motion -->
+    <string name="sec_motion_title">速度与拖尾</string>
+    <string name="label_speed">下落速度</string>
+    <string name="label_fade">尾迹长度</string>
+    <string name="label_trail_neon">尾迹霓虹发光范围</string>
+    <string name="hint_trail_neon">0%% = 仅1个字符发光。每+10%%增加1个发光字符（100%% = 11个字符）。</string>
+
+    <!-- Toggles -->
+    <string name="label_glow">霓虹光晕 (Bloom)</string>
+    <string name="label_crt">CRT 扫描线</string>
+    <string name="label_touch">触控互动</string>
+    <string name="label_audio">降雨白噪音</string>
+    <string name="hint_audio">平滑循环播放环境雨声。</string>
+
+    <!-- Messages -->
+    <string name="sec_message_title">注入终端文本</string>
+    <string name="msg_placeholder">输入文本...</string>
+    <string name="chip_wake">"Wake up, Neo..."</string>
+    <string name="chip_rabbit">"Follow the white rabbit."</string>
+    <string name="chip_spoon">"There is no spoon."</string>
+    <string name="chip_alert">"SYSTEM BREACH DETECTED"</string>
+</resources>

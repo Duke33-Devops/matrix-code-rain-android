@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">Matrix Code Rain</string>
+    <string name="wallpaper_name">Matrix Code Rain Animado</string>
+    <string name="wallpaper_description">Fondo animado oficial de lluvia de código digital estilo Cyberpunk con colores y física personalizables.</string>
+    <string name="dream_name">Salvapantallas Matrix Code Rain</string>
+    
+    <!-- HUD & Actions -->
+    <string name="hud_title">Matrix CODE RAIN</string>
+    <string name="version_tag">v1.0.0</string>
+    <string name="btn_set_wallpaper">Establecer Fondo Animado</string>
+    <string name="btn_pause">Pausar</string>
+    <string name="btn_resume">Reanudar</string>
+    <string name="btn_reset">Reiniciar</string>
+    <string name="btn_send">Enviar</string>
+    <string name="btn_close">Cerrar</string>
+
+    <!-- Sections -->
+    <string name="sec_columns_title">Columnas, Gotas y Caudal</string>
+    <string name="label_columns">Número de Columnas</string>
+    <string name="label_max_drops">Máx. Gotas por Columna</string>
+    <string name="label_rain_density">Caudal / Intensidad de Lluvia</string>
+    <string name="hint_rain_density">Gotas aleatorias por columna (Tope del 75%%)</string>
+    <string name="label_static_grid">Caracteres Estáticos (Iluminación)</string>
+    <string name="hint_static_grid">Los caracteres quedan fijos en la cuadrícula y la gota avanza iluminando cada celda.</string>
+
+    <!-- Palettes -->
+    <string name="sec_palette_title">Paleta de Color</string>
+    <string name="palette_matrix">Verde Matrix</string>
+    <string name="palette_cyan">Cyber Cyan</string>
+    <string name="palette_amber">Ámbar CRT</string>
+    <string name="palette_magenta">Synthwave</string>
+    <string name="palette_red">Rojo Brecha</string>
+    <string name="palette_white">Blanco Puro</string>
+
+    <!-- Trail & Motion -->
+    <string name="sec_motion_title">Velocidad y Estela</string>
+    <string name="label_speed">Velocidad de Avance</string>
+    <string name="label_fade">Longitud de Cola / Estela</string>
+    <string name="label_trail_neon">Alcance Neón en Rastro</string>
+    <string name="hint_trail_neon">0%% = 1 letra neón. Cada +10%% suma 1 letra más (100%% = 11 letras).</string>
+
+    <!-- Toggles -->
+    <string name="label_glow">Resplandor Neón (Bloom)</string>
+    <string name="label_crt">Líneas de Escaneo CRT</string>
+    <string name="label_touch">Interactividad Táctil</string>
+    <string name="label_audio">Sonido de Lluvia</string>
+    <string name="hint_audio">Reproduce sonido binaural de lluvia en bucle suave.</string>
+
+    <!-- Messages -->
+    <string name="sec_message_title">Inyectar Mensaje</string>
+    <string name="msg_placeholder">Escribe un mensaje...</string>
+    <string name="chip_wake">"Wake up, Neo..."</string>
+    <string name="chip_rabbit">"Sigue al conejo blanco."</string>
+    <string name="chip_spoon">"No hay cuchara."</string>
+    <string name="chip_alert">"SYSTEM BREACH DETECTED"</string>
+</resources>
