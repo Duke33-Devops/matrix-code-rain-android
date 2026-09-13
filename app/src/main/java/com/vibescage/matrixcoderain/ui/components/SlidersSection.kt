@@ -10,6 +10,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Slider
 import androidx.compose.material3.SliderDefaults
 import androidx.compose.material3.Switch
+import androidx.compose.material3.SwitchColors
 import androidx.compose.material3.SwitchDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -253,7 +254,7 @@ private fun ToggleRow(
     hint: String? = null,
     checked: Boolean,
     onCheckedChange: (Boolean) -> Unit,
-    switchColors: SwitchDefaults
+    switchColors: SwitchColors
 ) {
     Row(
         modifier = Modifier
