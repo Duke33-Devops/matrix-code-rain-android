@@ -3,8 +3,8 @@
 ## 📌 Dashboard de Estado
 - **Proyecto:** Matrix Code Rain Android (Nativo + Live Wallpaper + Screensaver)
 - **Hito Actual:** Hito 1.0 — MVP Nativo, Live Wallpaper & Build Estable ✅
-- **Estado Global:** Totalmente funcional, APK Debug compilado con éxito (100% completado)
-- **Fase Activa:** Fase 4: Setup Gradle, Iconos HD y Validación APK ✅
+- **Estado Global:** Totalmente funcional, APKs Debug y Release firmados y subidos a Google Drive (100% completado)
+- **Fase Activa:** Fase 5: Generación Release Firmado y Subida a Google Drive ✅
 - **Bitácora Histórica:** [`BITACORA.md`](./BITACORA.md)
 
 ---
@@ -20,12 +20,14 @@
 | **Motor de Audio** | Android `MediaPlayer` en `audio/RainAudioManager.kt` | Bucle continuo de lluvia binaural con fundidos suaves (*fade-in* y *fade-out*). |
 | **Persistencia** | Jetpack DataStore Preferences en `data/MatrixPreferences.kt` | Almacenamiento reactivo de parámetros compartido entre Activity y WallpaperService. |
 | **Iconografía** | Mipmaps PNG + Adaptive Vector + `google-play-icon.png` | Iconos HD adaptativos y recurso 512x512 para Google Play Store. |
+| **Distribución Google Drive** | Google Drive for Desktop (`H:\Mi unidad`) | Sincronización en la nube de binarios APK Debug y Release firmados. |
 
 ### Comandos de Ejecución y Validación
 - **Compilación APK Debug:** `.\gradlew assembleDebug`
-- **Instalación en Dispositivo/Emulador:** `.\gradlew installDebug`
+- **Compilación APK Release Firmado:** `.\gradlew assembleRelease`
+- **Instalación en Dispositivo/Emulador:** `.\gradlew installDebug` o `.\gradlew installRelease`
 - **Inspección de Dispositivos Conectados:** `& "C:\Users\ferna\AppData\Local\Android\Sdk\platform-tools\adb.exe" devices`
-- **Ubicación del APK Generado:** `app\build\outputs\apk\debug\app-debug.apk`
+- **Ubicación de APKs en Google Drive:** `H:\Mi unidad\matrix-code-rain-release.apk` y `matrix-code-rain-debug.apk`
 
 ---
 
@@ -36,6 +38,7 @@ graph TD
     A[Fase 1: Motor Gráfico Canvas MatrixEngine] --> B[Fase 2: Servicios Wallpaper & Daydream]
     B --> C[Fase 3: HUD Jetpack Compose y Audio]
     C --> D[Fase 4: Setup Gradle, Iconos HD y Validación APK]
+    D --> E[Fase 5: Generación Release Firmado y Subida a Google Drive]
 ```
 
 ### Resumen de Fases Completadas (Ver detalle en BITACORA.md)
@@ -43,19 +46,19 @@ graph TD
 - *Fase 2: Servicios Wallpaper & Daydream:* Implementación de `MatrixWallpaperService` y `MatrixDreamService` registrados en el AndroidManifest. ✅
 - *Fase 3: HUD Jetpack Compose y Audio:* Interfaz `CyberHudOverlay`, 6 paletas cyberpunk, inyector de mensajes y sonido binaural `RainAudioManager`. ✅
 - *Fase 4: Setup Gradle, Iconos HD y Validación APK:* Configuración de `gradle.properties`, corrección de tipos en `SlidersSection.kt`, generación de mipmaps y compilación exitosa del APK. ✅
+- *Fase 5: Generación Release Firmado y Subida a Google Drive:* Compilación con R8/Proguard (16.3 MB) y subida a `H:\Mi unidad`. ✅
 
 ---
 
-## 🎯 Fase Activa: Fase 4: Setup Gradle, Iconos HD y Validación APK ✅
+## 🎯 Fase Activa: Fase 5: Generación Release Firmado y Subida a Google Drive ✅
 
 ### Objetivo
-Asegurar la compilación limpia del proyecto nativo Android, configurar el entorno Gradle/SDK, generar los recursos de iconografía para todas las densidades de pantalla y verificar el binario APK.
+Configurar la firma para el tipo de compilación release, reducir a la mitad el tamaño del binario mediante ofuscación y descarte de recursos con R8, y sincronizar los APKs en Google Drive.
 
 ### Criterios de Aceptación
-- Build exitoso con `./gradlew assembleDebug` sin errores de compilación ni dependencias faltantes.
-- Configuración de AndroidX habilitada en `gradle.properties`.
-- Iconografía completa en `mipmap-mdpi`, `hdpi`, `xhdpi`, `xxhdpi`, `xxxhdpi` y `google-play-icon.png` (512x512).
-- APK generado y verificado en `app/build/outputs/apk/debug/app-debug.apk`.
+- `assembleRelease` completado con éxito produciendo `app-release.apk` firmado y ejecutable.
+- Archivo `matrix-code-rain-release.apk` (16.3 MB) presente en `H:\Mi unidad`.
+- Archivo `matrix-code-rain-debug.apk` (32.5 MB) presente en `H:\Mi unidad`.
 
 ---
 
@@ -65,6 +68,6 @@ Al abrir una nueva conversación, copia y pega el siguiente mensaje:
 
 ```
 Continúa con el PLAN_DE_TRABAJO.md de e:/Antigravity/Matrix code rain Android.
-El Hito 1.0 (MVP Nativo, Live Wallpaper y Build Estable) está completado.
-Procede de forma 100% autónoma para la siguiente solicitud o despliegue.
+El Hito 1.0 (MVP Nativo, Live Wallpaper y APKs en Google Drive) está completado.
+Procede de forma 100% autónoma para la siguiente solicitud.
 ```

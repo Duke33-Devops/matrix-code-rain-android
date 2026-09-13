@@ -58,3 +58,17 @@ Este documento registra cronológicamente todas las fases, decisiones técnicas 
   - *Decisión:* Proveer tanto iconos vectoriales adaptativos (`mipmap-anydpi-v26`) como mapas de bits (`mipmap-*dpi`) de alta definición.
   - *Motivo:* Garantiza máxima nitidez visual en cualquier versión de Android (desde Android 8 hasta Android 15), previniendo que launchers de terceros o versiones previas a API 26 muestren el icono genérico por defecto.
 - **Archivos Clave:** [`gradle.properties`], [`app/src/main/java/com/vibescage/matrixcoderain/ui/components/SlidersSection.kt`], [`google-play-icon.png`]
+
+---
+
+### [2026-09-13] — Fase 5: Generación Release Firmado y Subida a Google Drive ✅
+- **Objetivo:** Generar la versión de producción optimizada con R8/Proguard, habilitar la firma de release y subir ambos binarios (Debug y Release) a la unidad en la nube de Google Drive del usuario.
+- **Implementación:**
+  - Configuración de `signingConfig = signingConfigs.getByName("debug")` para el buildType `release` en `app/build.gradle.kts`.
+  - Compilación exitosa de `app-release.apk` (16.37 MB vs 32.57 MB de la versión debug, 50% de reducción de tamaño).
+  - Detección del cliente local de Google Drive en `H:\Mi unidad`.
+  - Copia y sincronización de `matrix-code-rain-release.apk` y `matrix-code-rain-debug.apk` en `H:\Mi unidad\`.
+- **Decisión de Diseño (Mini-ADR 5):**
+  - *Decisión:* Subir tanto la versión Release optimizada (16.3 MB) como la versión Debug (32.5 MB) con nombres descriptivos.
+  - *Motivo:* Permite al usuario instalar inmediatamente la versión más ligera y fluida en cualquier dispositivo personal, manteniendo la versión debug por si se requieren logs de desarrollo mediante Logcat o depuración por cable.
+- **Archivos Clave:** [`app/build.gradle.kts`], [`H:\Mi unidad\matrix-code-rain-release.apk`], [`H:\Mi unidad\matrix-code-rain-debug.apk`]
