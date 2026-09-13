@@ -47,6 +47,8 @@
     <string name="hint_audio">Plays ambient rain audio with smooth fade.</string>
 
     <!-- Messages -->
+    <string name="message_hud_title">Screen Message</string>
+    <string name="btn_clear_message">Clear Message</string>
     <string name="sec_message_title">Inject Terminal Message</string>
     <string name="msg_placeholder">Type a message...</string>
     <string name="chip_wake">"Wake up, Neo..."</string>

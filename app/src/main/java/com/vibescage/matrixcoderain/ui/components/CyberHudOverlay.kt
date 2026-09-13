@@ -55,7 +55,6 @@ fun CyberHudOverlay(
     onToggleHud: () -> Unit,
     onConfigChange: (MatrixConfig) -> Unit,
     onSetWallpaperClick: () -> Unit,
-    onInjectMessage: (String) -> Unit,
     onResetConfig: () -> Unit,
     modifier: Modifier = Modifier
 ) {
@@ -190,14 +189,6 @@ fun CyberHudOverlay(
                     SlidersSection(
                         config = config,
                         onConfigChange = onConfigChange
-                    )
-
-                    Spacer(modifier = Modifier.height(14.dp))
-
-                    // Inyector de Mensajes Terminal
-                    MessageInjectorSection(
-                        palette = config.palette,
-                        onInjectMessage = onInjectMessage
                     )
                 }
 

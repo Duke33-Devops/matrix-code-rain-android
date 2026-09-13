@@ -177,11 +177,23 @@ class MatrixEngine {
         }
     }
 
+    val isMessageActive: Boolean
+        get() = terminalText != null
+
     /**
      * Inyecta un mensaje en la terminal con efecto máquina de escribir
      */
     fun injectMessage(message: String) {
         terminalText = message
+        terminalVisibleChars = 0
+        terminalTimer = 0f
+    }
+
+    /**
+     * Quita el mensaje de terminal de la pantalla
+     */
+    fun clearMessage() {
+        terminalText = null
         terminalVisibleChars = 0
         terminalTimer = 0f
     }
@@ -429,7 +441,8 @@ class MatrixEngine {
         terminalPaint.textAlign = Paint.Align.CENTER
 
         val centerX = width / 2f
-        val centerY = height / 2f
+        // Posicionado en el tercio superior para no quedar tapado por paneles inferiores
+        val centerY = height * 0.36f
 
         // Fondo oscuro semitransparente para legibilidad
         val bgPaint = Paint().apply {

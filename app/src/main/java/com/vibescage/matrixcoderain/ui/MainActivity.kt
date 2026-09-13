@@ -28,6 +28,7 @@ import com.vibescage.matrixcoderain.data.MatrixConfig
 import com.vibescage.matrixcoderain.data.MatrixPreferences
 import com.vibescage.matrixcoderain.service.MatrixWallpaperService
 import com.vibescage.matrixcoderain.ui.components.CyberHudOverlay
+import com.vibescage.matrixcoderain.ui.components.MessageHudOverlay
 import com.vibescage.matrixcoderain.ui.theme.MatrixCodeRainTheme
 import kotlinx.coroutines.launch
 
@@ -53,6 +54,7 @@ class MainActivity : ComponentActivity() {
                 val currentConfig by preferences.configFlow.collectAsState(initial = MatrixConfig())
                 val coroutineScope = rememberCoroutineScope()
                 var isHudVisible by remember { mutableStateOf(false) }
+                var isMessageHudVisible by remember { mutableStateOf(false) }
                 var canvasViewRef by remember { mutableStateOf<MatrixCanvasView?>(null) }
 
                 // Control del Audio según configuración
@@ -90,11 +92,14 @@ class MainActivity : ComponentActivity() {
                         modifier = Modifier.fillMaxSize()
                     )
 
-                    // 2. HUD Cyberpunk Flotante
+                    // 2. HUD Cyberpunk Flotante (Configuración General - Tuerca en esquina inferior derecha)
                     CyberHudOverlay(
                         config = currentConfig,
                         isHudVisible = isHudVisible,
-                        onToggleHud = { isHudVisible = !isHudVisible },
+                        onToggleHud = {
+                            isHudVisible = !isHudVisible
+                            if (isHudVisible) isMessageHudVisible = false
+                        },
                         onConfigChange = { newConfig ->
                             coroutineScope.launch {
                                 preferences.saveConfig(newConfig)
@@ -103,13 +108,26 @@ class MainActivity : ComponentActivity() {
                         onSetWallpaperClick = {
                             openLiveWallpaperPicker()
                         },
-                        onInjectMessage = { message ->
-                            canvasViewRef?.engine?.injectMessage(message)
-                        },
                         onResetConfig = {
                             coroutineScope.launch {
                                 preferences.saveConfig(MatrixConfig())
                             }
+                        }
+                    )
+
+                    // 3. Ventana Independiente de Mensajes en Pantalla (Redondel en esquina inferior izquierda)
+                    MessageHudOverlay(
+                        palette = currentConfig.palette,
+                        isVisible = isMessageHudVisible,
+                        onToggleVisible = {
+                            isMessageHudVisible = !isMessageHudVisible
+                            if (isMessageHudVisible) isHudVisible = false
+                        },
+                        onInjectMessage = { message ->
+                            canvasViewRef?.engine?.injectMessage(message)
+                        },
+                        onClearMessage = {
+                            canvasViewRef?.engine?.clearMessage()
                         }
                     )
                 }

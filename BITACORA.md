@@ -1,4 +1,4 @@
-﻿# Bitácora de Desarrollo — Matrix Code Rain Android
+# Bitácora de Desarrollo — Matrix Code Rain Android
 
 Este documento registra cronológicamente todas las fases, decisiones técnicas de diseño (Mini-ADRs), cambios implementados y referencias de contexto de la versión nativa de Matrix Code Rain para Android.
 
@@ -72,3 +72,27 @@ Este documento registra cronológicamente todas las fases, decisiones técnicas 
   - *Decisión:* Subir tanto la versión Release optimizada (16.3 MB) como la versión Debug (32.5 MB) con nombres descriptivos.
   - *Motivo:* Permite al usuario instalar inmediatamente la versión más ligera y fluida en cualquier dispositivo personal, manteniendo la versión debug por si se requieren logs de desarrollo mediante Logcat o depuración por cable.
 - **Archivos Clave:** [`app/build.gradle.kts`], [`H:\Mi unidad\matrix-code-rain-release.apk`], [`H:\Mi unidad\matrix-code-rain-debug.apk`]
+
+---
+
+### [2026-09-13] — Fase 6: Ventana Independiente de Mensajes y Función de Borrado de Pantalla ✅
+- **Objetivo:** Resolver el problema en el que el mensaje proyectado en pantalla no podía eliminarse una vez mostrado y quedaba oculto detrás de la ventana de configuración, separando la gestión de mensajes en una ventana independiente minimizable a un redondel en la esquina inferior izquierda.
+- **Implementación:**
+  - `MatrixEngine.kt`:
+    - Implementación del método `clearMessage()` que restablece `terminalText = null` y limpia los contadores de renderizado.
+    - Ajuste de elevación de la posición vertical `centerY = height * 0.36f` (tercio superior) para que el mensaje no colisione con ventanas o controles inferiores.
+  - Creación de `MessageHudOverlay.kt`:
+    - Botón flotante circular en la esquina inferior izquierda (`Alignment.BottomStart`, 54.dp, borde neón cyberpunk e icono `Icons.AutoMirrored.Filled.Chat`).
+    - Panel flotante Glassmorphism independiente con campo de texto, botón Enviar y frases predefinidas.
+    - Botón destacado de borrado ("Quitar Mensaje de Pantalla") con estilo de acento de advertencia.
+  - `CyberHudOverlay.kt`:
+    - Desacoplamiento de la sección de mensajes del menú general de configuración, reduciendo la altura de la ventana y mejorando la ergonomía.
+  - `MainActivity.kt`:
+    - Gestión de estados de visibilidad independientes (`isHudVisible` para la tuerca y `isMessageHudVisible` para el redondel de mensajes).
+  - Actualización de cadenas multiidioma en `values/strings.xml` y `values-es/strings.xml`.
+  - Recompilación y despliegue directo de `matrix-code-rain-debug.apk` y `matrix-code-rain-release.apk` en `H:\Mi unidad\`.
+- **Decisión de Diseño (Mini-ADR 6):**
+  - *Decisión:* Separar la interfaz en dos accesos directos minimizables simétricos (Tuerca a la derecha para ajustes del motor gráfico, Burbuja de chat a la izquierda para mensajes).
+  - *Motivo:* Permite al usuario tener un control táctil limpio en pantallas móviles tipo 9:16 o 20:9 con una sola mano, sin abarrotar la pantalla ni tapar el texto de la terminal decodificada.
+- **Archivos Clave:** [`MatrixEngine.kt`], [`MessageHudOverlay.kt`], [`CyberHudOverlay.kt`], [`MainActivity.kt`], [`H:\Mi unidad\matrix-code-rain-release.apk`]
+

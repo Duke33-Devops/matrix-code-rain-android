@@ -1,4 +1,4 @@
-﻿# Plan de Trabajo: Matrix Code Rain Android
+# Plan de Trabajo: Matrix Code Rain Android
 
 ## 📌 Dashboard de Estado
 - **Proyecto:** Matrix Code Rain Android (Nativo + Live Wallpaper + Screensaver)
@@ -39,6 +39,7 @@ graph TD
     B --> C[Fase 3: HUD Jetpack Compose y Audio]
     C --> D[Fase 4: Setup Gradle, Iconos HD y Validación APK]
     D --> E[Fase 5: Generación Release Firmado y Subida a Google Drive]
+    E --> F[Fase 6: Ventana Independiente de Mensajes y Botón Quitar Mensaje]
 ```
 
 ### Resumen de Fases Completadas (Ver detalle en BITACORA.md)
@@ -47,18 +48,21 @@ graph TD
 - *Fase 3: HUD Jetpack Compose y Audio:* Interfaz `CyberHudOverlay`, 6 paletas cyberpunk, inyector de mensajes y sonido binaural `RainAudioManager`. ✅
 - *Fase 4: Setup Gradle, Iconos HD y Validación APK:* Configuración de `gradle.properties`, corrección de tipos en `SlidersSection.kt`, generación de mipmaps y compilación exitosa del APK. ✅
 - *Fase 5: Generación Release Firmado y Subida a Google Drive:* Compilación con R8/Proguard (16.3 MB) y subida a `H:\Mi unidad`. ✅
+- *Fase 6: Ventana Independiente de Mensajes:* Creación de `MessageHudOverlay`, redondel en esquina inferior izquierda, elevación del texto en pantalla y botón para quitar el mensaje activo. ✅
 
 ---
 
-## 🎯 Fase Activa: Fase 5: Generación Release Firmado y Subida a Google Drive ✅
+## 🎯 Fase Activa: Fase 6: Ventana Independiente de Mensajes y Botón Quitar Mensaje ✅
 
 ### Objetivo
-Configurar la firma para el tipo de compilación release, reducir a la mitad el tamaño del binario mediante ofuscación y descarte de recursos con R8, y sincronizar los APKs en Google Drive.
+Separar la configuración de mensajes a una ventana propia minimizable en la esquina inferior izquierda y proveer un botón para limpiar el mensaje activo del lienzo.
 
 ### Criterios de Aceptación
-- `assembleRelease` completado con éxito produciendo `app-release.apk` firmado y ejecutable.
-- Archivo `matrix-code-rain-release.apk` (16.3 MB) presente en `H:\Mi unidad`.
-- Archivo `matrix-code-rain-debug.apk` (32.5 MB) presente en `H:\Mi unidad`.
+- Redondel en la esquina inferior izquierda para abrir/cerrar la ventana de mensajes.
+- Redondel de la tuerca en la esquina inferior derecha para la configuración general.
+- Botón "Quitar Mensaje de Pantalla" que borra instantáneamente el texto decodificado.
+- Posición del texto elevada (`centerY = height * 0.36f`) para una lectura clara sin obstrucción.
+- Binarios actualizados (`matrix-code-rain-release.apk` y `matrix-code-rain-debug.apk`) disponibles en `H:\Mi unidad\`.
 
 ---
 
@@ -68,6 +72,6 @@ Al abrir una nueva conversación, copia y pega el siguiente mensaje:
 
 ```
 Continúa con el PLAN_DE_TRABAJO.md de e:/Antigravity/Matrix code rain Android.
-El Hito 1.0 (MVP Nativo, Live Wallpaper y APKs en Google Drive) está completado.
-Procede de forma 100% autónoma para la siguiente solicitud.
+La Fase 6 (Ventana independiente de mensajes, botón de borrado y APKs actualizados en Google Drive) está completada.
+Procede de forma 100% autónoma para cualquier nueva solicitud.
 ```

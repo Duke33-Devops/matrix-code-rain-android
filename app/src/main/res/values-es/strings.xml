@@ -47,6 +47,8 @@
     <string name="hint_audio">Reproduce sonido binaural de lluvia en bucle suave.</string>
 
     <!-- Messages -->
+    <string name="message_hud_title">Mensaje en Pantalla</string>
+    <string name="btn_clear_message">Quitar Mensaje de Pantalla</string>
     <string name="sec_message_title">Inyectar Mensaje</string>
     <string name="msg_placeholder">Escribe un mensaje...</string>
     <string name="chip_wake">"Wake up, Neo..."</string>
